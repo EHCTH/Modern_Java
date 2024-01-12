@@ -41,8 +41,9 @@
         2) 함수형 인터페이스의 추상 메서드로 그 람다식 or 메서드 참조를 적용한다
         listValidator(List<T> list, Predicate<T> p) {
             ...코드생략
-            p.test(element); // 함수형 인터페이스 추상메서드
-                            // 함수형 인터페이스 위치에 작성한 람다식 or 메서드 참조가 추상메서드로 인해 적용된다
+            if (p.test(element));{    // 함수형 인터페이스 추상메서드, 함수형 인터페이스 위치에 작성한 람다식 or 메서드 참조가 추상메서드로 인해 적용된다
+                result.add(element);
+            }              
         }
 
     
