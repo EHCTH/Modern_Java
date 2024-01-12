@@ -8,6 +8,37 @@
             - 재사용성: 동일한 동작을 여러 함수에서 사용할 수 있다
             - 테스트 가능성: 함수형 인터페이스는 하나의 추상 메서드만 정의하기 때문에 테스트하기 쉽다
         결론 : 함수형 인터페이스를 사용하면 동작 파라미터화를 유연하게 할수있게된다.
+        여기서 동작파라미터화란?
+        동작 파라미터화(Behavior Parameterization)는 메서드가 호출될 때 어떤 동작을 수행할지 결정하는 책임을 메서드 외부로 전달하는 기법이다 
+        이 기법을 사용하면 동일한 메서드를 사용하여 다양한 동작을 수행할 수 있다
+        ex) 
+            사과가있다 그런데 사과를 초록색 사과만 고를수 있게 만들어야한다
+            그러면 코드는 대충 이렇게 만들수가 있다
+            List<Apple> greenApple(List<Apple> appleBox) {
+                List<Apple> result = new ArrayList<>();
+                for (Apple apple : appleBox) {
+                    if (apple.color.eqauls(GREEN)) {
+                        result.add(apple);
+                    }
+                }
+                return result;
+            }
+
+            이렇게 코드를 만들었는데 갑자기 고객이 요구사항이 더 추가가되면 어떡할까? 예를들어 초록색사과에 무게가 10 이상인것만 추가해줘라고 하면
+            코드를 복사 붙여넣기 해서 만들수있다 하지만 요구사항이 이것보다 더 +α 가 된다면 곤란해질것이다 
+            " 그럴때 함수형 인터페이스를 사용하여 동작파라미터화를 해주면 된다 "
+            static <T> List<T> appleValidator(List<T> appleBox, Predicate<T> p) { // 제네릭 메서드 사용
+                List<T> result = new ArrayList<>();
+                for (T apple : appleBox) {
+                    if (p.test(apple)) {
+                        result.add(apple);
+                    }
+                }
+                return result;
+            }
+            이렇게 코드를 작성하면 어떤 상황에도 유연하게 대처할수 있을것이다
+
+
         
 >    자바 함수형 인터페이스 표준 API
 >
@@ -52,7 +83,7 @@
 
 >    람다 형식검사, 형식추론 제약
 >
-        ㅇㄹㅇㄴㄹ
+        
         
 >    자바 람다식 정리(함수형인터페이스)
 >
