@@ -1,7 +1,20 @@
 # Modern_Java
->>  자바 람다식 정리(함수형인터페이스)
+>>    자바 함수형 인터페이스 표준 API
 >>
+        Supplier<T>, T get()
+        매개변수 X, 반환값 O
         
+        Consumer<T>,  void accept(T t)
+        매개변수 O, 반환값 X
+        
+        Function<T, R>, R apply(T t)
+        매개변수 O, 반환값 O <R>
+        
+        Predicate<T>, boolean test(T t)
+        매개변수 O, 반환값 O <boolean>   
+        
+>>    자바 람다식 정리(함수형인터페이스)
+>>
         Predicate<T> 를 기준으로 작성하였다
         Stream<T> filter(Predicate<? super T> predicate )
         필터 내장 메서드를 사용해도 됨
