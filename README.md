@@ -53,10 +53,11 @@
         Predicate<T>, boolean test(T t)
         매개변수 O, 반환값 O <boolean>   
         
->    함수 디스크립터
+>    함수 디스크립터 == 시그니처
 >
-        함수형 인터페이스의 추상 메서드 "시그니처"는 람다 표현식의 "시그니처"를 가리킨다.
-        람다 표현식의 "시그니처" 를 서술하는 메서드를 함수 디스크립터라고 부른다
+        함수형 인터페이스의 추상 메서드 "시그니처" 는 람다 표현식의 "시그니처"를 가리킨다.
+        람다 표현식의 "시그니처" 를 서술하는 메서드를 "함수 디스크립터" 라고 부른다
+        함수 디스크립터 == 시그니처 이다
 
         여기서 시그니처란?
         public static int add(int a, int b) {
@@ -73,9 +74,17 @@
         ex)
              Runnable 인터페이스의 추상 메서드 void run() 은 인수와 반환값이 없으므로 이렇게 나타낼수 있다 () -> void
              Supplier<T> 인터페이스의 추상메서드 T get()은 인수가 없고 반환값 <T>가 있으므로 이렇게 나타낼수 있다 () -> T
-             Consumer<T> 인터페이스의 추상메서드 void accept(T t)는 인수<T> 와 반환값이 없으므로 이렇게 나타낼수 있다 (T t) -> void
-             Function<T, R> 인터페이스의 추상 메서드 R apply(T t) 는 인수<T> 와 반환값 <R>이 있으므로 이렇게 나타낼수 있다 (T t) -> R
-             Predicate<T> 인터페이스의 추상메서드 boolean test(T t) 는 인수<T> 와 반환값 boolean이 있으므로 이렇게 나타낼수 있다 (T t) -> boolean
+             Consumer<T> 인터페이스의 추상메서드 void accept(T t)는 인수<T> 와 반환값이 없으므로 이렇게 나타낼수 있다 (T) -> void
+             Function<T, R> 인터페이스의 추상 메서드 R apply(T t) 는 인수<T> 와 반환값 <R>이 있으므로 이렇게 나타낼수 있다 (T) -> R
+             Predicate<T> 인터페이스의 추상메서드 boolean test(T t) 는 인수<T> 와 반환값 boolean이 있으므로 이렇게 나타낼수 있다 (T) -> boolean
+
+             ex) 추가
+                 interface Cal {
+                     int calMethod(int a, int b);
+                 }
+                이 경우의 함수형 인터페이스인 Cal의 추상메서드인 calMethod의 시그니처는 이렇게 나타낼수 있다
+                    (int, int) -> int
+        
 
 >    람다 형식검사, 형식추론, 제약
 >
