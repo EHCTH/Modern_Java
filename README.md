@@ -62,19 +62,7 @@
         메서드 시그니처 = (int, int)
         함수 디스크립터 = (int, int) -> int
 
-        여기서 시그니처란?
-        public static int add(int a, int b) {
-            return a + b;
-        }
-        이 메서드의 시그니처는 다음과 같이 요약할 수 있습니다.
-        
-        메서드 이름: add
-        매개변수 타입: int, int
-        매개변수 개수: 2
-        반환값 타입: int      
-        이렇게 나타낼수 있다
-
-        ex)
+        ex) 함수 디스크립터
              Runnable 인터페이스의 추상 메서드 void run() 은 인수와 반환값이 없으므로 이렇게 나타낼수 있다 () -> void
              Supplier<T> 인터페이스의 추상메서드 T get()은 인수가 없고 반환값 <T>가 있으므로 이렇게 나타낼수 있다 () -> T
              Consumer<T> 인터페이스의 추상메서드 void accept(T t)는 인수<T> 와 반환값이 없으므로 이렇게 나타낼수 있다 (T) -> void
@@ -85,7 +73,7 @@
                  interface Cal {
                      int calMethod(int a, int b);
                  }
-                이 경우의 함수형 인터페이스인 Cal의 추상메서드인 calMethod의 시그니처는 이렇게 나타낼수 있다
+                이 경우의 함수형 인터페이스인 Cal의 추상메서드인 calMethod의 함수 디스크립터는 이렇게 나타낼수 있다
                     (int, int) -> int
         
 
