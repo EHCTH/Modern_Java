@@ -63,8 +63,8 @@
         함수 디스크립터(반환값O) = (int, int) -> int
 
         ex) 함수 디스크립터
-             Runnable 인터페이스의 추상 메서드 void run() 은 인수와 반환값이 없으므로 이렇게 나타낼수 있다 () -> void
-             Supplier<T> 인터페이스의 추상메서드 T get()은 인수가 없고 반환값 <T>가 있으므로 이렇게 나타낼수 있다 () -> T
+             Runnable 인터페이스의 추상 메서드 void run() 은 인수와 반환값이 없으므로 이렇게 나타낼수 있다 (void) -> void
+             Supplier<T> 인터페이스의 추상메서드 T get()은 인수가 없고 반환값 <T>가 있으므로 이렇게 나타낼수 있다 (void) -> T
              Consumer<T> 인터페이스의 추상메서드 void accept(T t)는 인수<T> 와 반환값이 없으므로 이렇게 나타낼수 있다 (T) -> void
              Function<T, R> 인터페이스의 추상 메서드 R apply(T t) 는 인수<T> 와 반환값 <R>이 있으므로 이렇게 나타낼수 있다 (T) -> R
              Predicate<T> 인터페이스의 추상메서드 boolean test(T t) 는 인수<T> 와 반환값 boolean이 있으므로 이렇게 나타낼수 있다 (T) -> boolean
